@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpah1
+kind: Application
+metadata:
+  name: veridid-dummy-app-argo
+  namespace: argocd
+spec: 
+  project: default
+  source:
+    repoURL: https://github.com/VeriDID/docker-build-k8s-config.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: eks-sample-app
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
