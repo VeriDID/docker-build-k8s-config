@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: docker-build
-          image: "ghcr.io/VeriDID/docker-build:sha-b16bf43"
+          image: ":sha-4e0593c"
           imagePullPolicy: Always
           env:
             - name: POSTGRES_USER
