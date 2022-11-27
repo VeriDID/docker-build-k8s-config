@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: docker-build
-          image: "elaquiambao/VeriDID/docker-build:12"
+          image: "ghcr.io/elaquiambao/VeriDID/docker-build:13"
           imagePullPolicy: Always
           env:
             - name: POSTGRES_USER
