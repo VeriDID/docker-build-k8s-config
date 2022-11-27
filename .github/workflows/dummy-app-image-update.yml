@@ -15,7 +15,7 @@ jobs:
       id: imgupd
       uses: mikefarah/yq@master
       with:
-        cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i dev/veridid-dummy-app-deployment.yml
+        cmd: yq eval '.spec.template.spec.containers[0].image = ${{ github.event.client_payload.image }}' -i dev/veridid-dummy-app-deployment.yml
       
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
