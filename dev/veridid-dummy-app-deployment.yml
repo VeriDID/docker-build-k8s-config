@@ -18,24 +18,24 @@ spec:
         app: veridid-dummy-app
     spec:
       containers:
-      - name: docker-build
-        image: ghcr.io/veridid/docker-build:sha-b257a7a
-        imagePullPolicy: Always
-        env:
-        - name: POSTGRES_USER
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: postgres-user
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: postgres-password
-        - name: POSTGRES_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: postgres-config
-              key: postgres-url
+        - name: docker-build
+          image: ""
+          imagePullPolicy: Always
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-password
+            - name: POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: postgres-url
       imagePullSecrets:
         - name: ghcr-secret
