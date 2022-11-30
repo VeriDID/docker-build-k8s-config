@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: veridid-dummy-app-deployment
+  name: veridid-dummy-app
   namespace: eks-sample-app
   labels:
     app: veridid-dummy-app
