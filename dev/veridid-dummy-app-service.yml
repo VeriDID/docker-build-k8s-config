@@ -3,6 +3,9 @@ kind: Service
 metadata:
   name: veridid-dummy-app-service
   namespace: eks-sample-app
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
 spec:
   type: LoadBalancer
   selector:
