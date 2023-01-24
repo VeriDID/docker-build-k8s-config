@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: veridid-dummy-app-alb-service
   namespace: eks-sample-app
-  labesls:
+  labels:
     veridid-dummy-app-alb
 spec:
   type: ClusterIP
