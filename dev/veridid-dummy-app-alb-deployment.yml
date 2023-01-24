@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: veridid-dummy-app-alb-deployment
+  namespace: eks-sample-app
+  labels:
+    app: veridid-dummy-app-alb
+spec:
+  selector:
+    matchLabels:
+      app: veridid-dummy-app-alb
+  replicas: 1
+  # strategy: 
+  # type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: veridid-dummy-app-alb
+    spec:
+      containers:
+        - name: docker-build
+          image: "ghcr.io/veridid/docker-build:sha-5f9cb6a"
+          imagePullPolicy: Always
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-password
+            - name: POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: postgres-url
