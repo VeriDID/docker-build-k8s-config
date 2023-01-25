@@ -6,7 +6,7 @@ metadata:
   annotations: 
     alb.ingress.kubernetes.io/load-balancer-name: veridid-dummy-app-alb-ingress 
     alb.ingress.kubernetes.io/target-type: ip 
-    alb.ingress.kubernetes.io/scheme: internet-facing 
+    alb.ingress.kubernetes.io/scheme: internal 
     alb.ingress.kubernetes.io/healthcheck-path: / 
 spec: 
   ingressClassName: alb 
