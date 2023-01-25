@@ -20,10 +20,3 @@ spec:
                 name: veridid-dummy-app-alb-service 
                 port: 
                   name: svc-port 
-          - path: /foo 
-            pathType: Prefix 
-            backend: 
-              service: 
-                name: veridid-dummy-app-alb-service 
-                port: 
-                  name: svc-port
